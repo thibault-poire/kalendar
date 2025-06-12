@@ -44,7 +44,7 @@ export function get_month_as_chunks(year: number, month: MONTH) {
   const last_date_of_month = new Date(year, month + 1, 0);
   const number_of_days = last_date_of_month.getDate();
   const number_of_previous_month_date = (first_date_of_month.getDay() + 6) % 7;
-  const number_of_next_month_date = 35 - (number_of_days + number_of_previous_month_date);
+  const number_of_next_month_date = 42 - (number_of_days + number_of_previous_month_date);
   const chunks: Date[][] = [];
 
   const dates = [
