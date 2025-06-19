@@ -1,32 +1,7 @@
-export enum MONTH {
-  JANUARY = 0,
-  FEBRUARY = 1,
-  MARCH = 2,
-  APRIL = 3,
-  MAY = 4,
-  JUNE = 5,
-  JULY = 6,
-  AUGUST = 7,
-  SEPTEMBER = 8,
-  OCTOBER = 9,
-  NOVEMBER = 10,
-  DECEMBER = 11,
-}
+import { DAY } from "~/types/date.enum";
 
-export enum DAY {
-  SUNDAY = 0,
-  MONDAY = 1,
-  TUESDAY = 2,
-  WEDNESDAY = 3,
-  THURSDAY = 4,
-  FRIDAY = 5,
-  SATURDAY = 6,
-}
-
-export enum LOCALE {
-  EN_GB = 'en-GB',
-  FR_FR = 'fr-FR',
-}
+import type { MONTH } from "~/types/date.enum";
+import type { LOCALE } from "~/types/locale.enum";
 
 function get_dates_after(number: number, date: Date) {
   return Array.from(
