@@ -1,13 +1,15 @@
 import { $, component$, useComputed$, useContext, useTask$ } from '@builder.io/qwik';
 import { useNavigate } from '@builder.io/qwik-city';
 
-import { add_month_to_date, get_translated_date, LOCALE, subtract_month_to_date } from '~/helpers/date';
+import { add_month_to_date, get_translated_date, subtract_month_to_date } from '~/helpers/date';
 
 import { selected_date_context } from '~/contexts/date';
 import { selected_locale_context } from '~/contexts/locale';
 
 import { Month } from '~/components/month/month';
 import { Selector } from '~/components/selector/selector';
+
+import { LOCALE } from '~/types/locale.enum';
 
 export default component$(() => {
   const selected_date = useContext(selected_date_context);

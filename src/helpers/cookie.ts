@@ -5,12 +5,12 @@ export const string_to_object = (cookie: string) => {
   const formatted_options = options.reduce((previous, current) => {
     const [ name, value ] = current.split('=');
 
-    return { ...previous, [decapitalize(name.trim())]: value ?? 'true' };
+    return { ...previous, [uncapitalize(name.trim())]: value || 'true' };
   }, {} as {[key: string]: string});
 
   return { name, value, options: formatted_options };
 };
 
-const decapitalize = ([ first_letter, ...letters ]: string) => {
+const uncapitalize = ([ first_letter, ...letters ]: string) => {
   return `${first_letter.toLowerCase()}${letters.join('')}`;
 };

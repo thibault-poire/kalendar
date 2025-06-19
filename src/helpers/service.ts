@@ -1,1 +1,0 @@
-export const post = async (url: string, parameters?: Record<string, any>) => await fetch(`${import.meta.env.PUBLIC_API_URL}/${url}`, { body: new URLSearchParams(parameters), credentials: "include", method: 'POST', });
