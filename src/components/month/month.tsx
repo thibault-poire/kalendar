@@ -5,6 +5,7 @@ import { get_month_as_chunks, get_translated_day_names } from '~/helpers/date';
 import { Day } from '~/components/day/day';
 import { Table } from '~/components/table/table';
 
+import clsx from 'clsx';
 import type { LOCALE } from '~/helpers/date';
 
 type Props = {
@@ -16,8 +17,8 @@ type Props = {
 export const Month = component$(({ class: _class, date, locale }: Props) => {
   const translated_day_names = get_translated_day_names(locale);
   const dates = get_month_as_chunks(date.getFullYear(), date.getMonth()).map((month) => {
-    return month.map((date) => {
-      return <Day key={date.getTime()} date={date} />;
+    return month.map((month_date) => {
+      return <Day class={clsx(date.getMonth() !== month_date.getMonth() && 'kldr:text-gray-500')} date={month_date} key={date.getTime()} />;
     });
   });
 
